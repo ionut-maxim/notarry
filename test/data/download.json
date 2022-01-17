@@ -1,0 +1,51 @@
+{
+    "type": "Download",
+    "download": {
+        "client": "",
+        "id": "56a59ec83e164ee49c7b8f334b88f0cc"
+    },
+    "movie": {
+        "id": "1095",
+        "imdb_id": "tt1254207",
+        "physical_release_date": "",
+        "title": "Big Buck Bunny",
+        "tmdb_id": "10378",
+        "year": "2008",
+        "in_cinemas_date": "04/10/2008 00:00:00",
+        "path": "/data/movies/Big Buck Bunny (2008)"
+    },
+    "movie_file": {
+        "id": "1497",
+        "relative_path": "Big Buck Bunny (2008) Bluray-720p.mkv",
+        "path": "/data/movies/Big Buck Bunny (2008)/Big Buck Bunny (2008) Bluray-720p.mkv",
+        "quality": "Bluray-720p",
+        "quality_version": "1",
+        "release_group": "DON",
+        "scene_name": "Big.Buck.Bunny.2008.720p.BluRay.x264-DON-Obfuscated",
+        "source_path": "/data/downloads/completed/Movies/Big.Buck.Bunny.2008.720p.BluRay.x264-DON-Obfuscated/65f03e7dd34f62479b6d2b9e4abda0d290b31d07.mkv",
+        "source_folder": "/data/downloads/completed/Movies/Big.Buck.Bunny.2008.720p.BluRay.x264-DON-Obfuscated",
+        "ids": [],
+        "relative_paths": [],
+        "paths": [],
+        "previous_relative_paths": [],
+        "previous_paths": []
+    },
+    "release": {
+        "indexer": "",
+        "quality": "",
+        "quality_version": "",
+        "group": "",
+        "size": 0,
+        "formatted_size": "",
+        "title": ""
+    },
+    "health_issue": {
+        "level": "",
+        "message": "",
+        "type": "",
+        "wiki": ""
+    },
+    "is_upgrade": false,
+    "deleted_relative_paths": [],
+    "deleted_paths": []
+}

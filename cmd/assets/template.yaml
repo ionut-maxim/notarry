@@ -1,0 +1,46 @@
+- type: divider
+
+- type: header
+  text:
+    type: plain_text
+    text: {{.Movie.Title}} ({{.Movie.Year}}) {{.FormattedType}}
+
+- type: context
+  elements:
+    - type: mrkdwn
+      text: >-
+        <https://www.imdb.com/title/{{.Movie.ImdbID}}|IMDB> 
+        <https://www.themoviedb.org/movie/{{.Movie.TmdbID}}|TMDB>
+
+- type: section
+  text:
+    type: mrkdwn
+    text: |
+      {{if .Download.Client -}}*Client:* `{{.Download.Client}}`{{- end}}
+      {{- if eq .Type "Grab" }}
+      *Size:* `{{.Release.FormattedSize}}`
+      *Indexer:* `{{.Release.Indexer}}`
+      *Quality:* `{{.Release.Quality}}`
+      *Group:* `{{.Release.Group}}`
+      *Title:* `{{.Release.Title}}`
+      {{ end -}}
+      {{- if eq .Type "Download"}}
+      *RelativePath:* `{{.MovieFile.RelativePath}}`
+      *Path:* `{{.MovieFile.Path}}`
+      *Quality:* `{{.MovieFile.Quality}}`
+      *Group:* `{{.MovieFile.ReleaseGroup}}`
+      *Scene Name*: `{{.MovieFile.SceneName}}`
+      *Source Path*: `{{.MovieFile.SourcePath}}`
+      {{ end -}}
+      {{- if and (eq .Type "Download") .IsUpgrade }}
+      *Deleted Files:* `{{.DeletedRelativePaths | join ";"}}`
+      *Deleted Paths:* `{{.DeletedPaths | join ";"}}`
+      {{ end -}}
+      {{- if eq .Type "MovieFileDelete"}}
+      *RelativePath:* `{{.MovieFile.RelativePath}}`
+      *Path:* `{{.MovieFile.Path}}`
+      *Quality:* `{{.MovieFile.Quality}}`
+      *Group:* `{{.MovieFile.ReleaseGroup}}`
+      *Scene Name*: `{{.MovieFile.SceneName}}`
+      {{ end  -}}
+      {{- if eq .Type "Test"}}Test Notification{{end -}}

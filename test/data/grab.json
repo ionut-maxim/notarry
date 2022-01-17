@@ -1,0 +1,51 @@
+{
+    "type": "Grab",
+    "download": {
+        "client": "NZBGet",
+        "id": "56a59ec83e164ee49c7b8f334b88f0cc"
+    },
+    "movie": {
+        "id": "1095",
+        "imdb_id": "tt1254207",
+        "physical_release_date": "",
+        "title": "Big Buck Bunny",
+        "tmdb_id": "10378",
+        "year": "2008",
+        "in_cinemas_date": "04/10/2008 00:00:00",
+        "path": ""
+    },
+    "movie_file": {
+        "id": "",
+        "relative_path": "",
+        "path": "",
+        "quality": "",
+        "quality_version": "",
+        "release_group": "",
+        "scene_name": "",
+        "source_path": "",
+        "source_folder": "",
+        "ids": [],
+        "relative_paths": [],
+        "paths": [],
+        "previous_relative_paths": [],
+        "previous_paths": []
+    },
+    "release": {
+        "indexer": "NZBgeek (Prowlarr)",
+        "quality": "Bluray-720p",
+        "quality_version": "1",
+        "group": "DON",
+        "size": 439939000,
+        "formatted_size": "419.6M",
+        "title": "Big.Buck.Bunny.2008.720p.BluRay.x264-DON-Obfuscated"
+    },
+    "health_issue": {
+        "level": "",
+        "message": "",
+        "type": "",
+        "wiki": ""
+    },
+    "is_upgrade": false,
+    "deleted_relative_paths": [],
+    "deleted_paths": []
+}
