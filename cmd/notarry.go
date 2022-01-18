@@ -11,7 +11,8 @@ import (
 	"github.com/ionut-maxim/notarry/internal"
 	"github.com/ionut-maxim/notarry/pkg/message"
 
-	log "github.com/sirupsen/logrus"
+	"github.com/rs/zerolog"
+	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -24,8 +25,7 @@ type Config struct {
 }
 
 const (
-	envPrefix             = "notarry"
-	defaultConfigFilename = "notarry"
+	appName = "notarry"
 )
 
 var (
@@ -45,7 +45,7 @@ with any *arr application.`,
 			template := config.Slack.Template
 
 			if err := message.SendSlackMessage(webhook, template); err != nil {
-				log.Fatal(err)
+				log.Print(err)
 				return err
 			}
 
@@ -59,23 +59,21 @@ func Execute() error {
 }
 
 func init() {
-	log.SetFormatter(&log.JSONFormatter{})
+	zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
 
 	envs := internal.GetEnvVariables("radarr")
 
-	log.WithFields(log.Fields{
-		"environment_variables": fmt.Sprint(strings.Join(envs, "\n")),
-	}).Info("Received event")
+	log.Info().Str("environment_variables", fmt.Sprint(strings.Join(envs, "\n"))).Msg("Event received")
 
 	cobra.OnInitialize(initConfig)
 }
 
 func initConfig() {
-	viper.SetConfigName(defaultConfigFilename)
+	viper.SetConfigName(appName)
 
 	ex, err := os.Executable()
 	if err != nil {
-		log.Fatal(err)
+		log.Print(err)
 	}
 	exPath := filepath.Dir(ex)
 
@@ -84,11 +82,11 @@ func initConfig() {
 
 	if err := viper.ReadInConfig(); err != nil {
 		if _, ok := err.(viper.ConfigFileNotFoundError); !ok {
-			log.Fatal(err)
+			log.Print(err)
 		}
 	}
 
-	viper.SetEnvPrefix(envPrefix)
+	viper.SetEnvPrefix(appName)
 	viper.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
 	viper.AutomaticEnv()
 
@@ -100,6 +98,6 @@ func initConfig() {
 
 	err = viper.Unmarshal(&config)
 	if err != nil {
-		log.Fatalf("unable to decode into struct, %v", err)
+		log.Printf("unable to decode into struct, %v", err)
 	}
 }
