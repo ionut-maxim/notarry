@@ -6,6 +6,7 @@ require (
 	code.cloudfoundry.org/bytefmt v0.0.0-20211005130812-5bb3c17173e5
 	github.com/Masterminds/sprig v2.22.0+incompatible
 	github.com/Masterminds/sprig/v3 v3.2.2
+	github.com/caarlos0/env/v10 v10.0.0
 	github.com/caarlos0/env/v6 v6.10.1
 	github.com/rs/zerolog v1.28.0
 	github.com/slack-go/slack v0.11.3
