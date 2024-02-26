@@ -8,7 +8,7 @@ require (
 	github.com/Masterminds/sprig/v3 v3.2.2
 	github.com/caarlos0/env/v6 v6.10.1
 	github.com/rs/zerolog v1.28.0
-	github.com/slack-go/slack v0.11.3
+	github.com/slack-go/slack v0.12.5
 	github.com/spf13/cobra v1.6.1
 	github.com/spf13/viper v1.13.0
 	sigs.k8s.io/yaml v1.3.0
